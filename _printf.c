@@ -11,11 +11,10 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	long unsigned i;
+	unsigned int i;
 	int count = 0;
-	int j;
+	char p, c;
 	char *h;
-	char c;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -27,20 +26,16 @@ int _printf(const char *format, ...)
 			switch (format[++i])
 			{
 				case '%':
-					 c = va_arg(args, int);
-					_putchar(c);
-					count += 1;
+					p = va_arg(args, int);
+					count = choose(p);
 					break;
 				case 'c':
 					c = va_arg(args, int);
-					_putchar(c);
-					count += 1;
+					count = chare(c);
 					break;
 				case 's':
 					h = va_arg(args, char*);
-					puts(h);
-					for (j = 0 ; h[j] != '\0' ; j++)
-						count += 1;
+					count = string(h);
 					break;
 				default:
 					break;
