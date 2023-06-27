@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	int count = 0;
 	char c;
-	int *y;
 	char *h;
 
 	va_start(args, format);
