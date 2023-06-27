@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int i;
 	int count = 0;
-	char p, c;
+	char c;
 	int *y;
 	char *h;
 
@@ -27,8 +27,8 @@ int _printf(const char *format, ...)
 			switch (format[++i])
 			{
 				case '%':
-					p = va_arg(args, int);
-					count = choose(p);
+					_putchar('%');
+					count += 1;
 					break;
 				case 'c':
 					c = va_arg(args, int);
@@ -37,11 +37,6 @@ int _printf(const char *format, ...)
 				case 's':
 					h = va_arg(args, char*);
 					count = string(h);
-					break;
-				case 'd':
-					y = va_arg(args, int*);
-					_putchar(y[0] + '0');
-					count += 1;
 					break;
 				default:
 					break;
