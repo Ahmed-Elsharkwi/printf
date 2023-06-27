@@ -2,12 +2,11 @@
 /**
  * chare - print the lettter
  * @c: is a char
+ * @count: is an int
  * Return: 0 (success)
  */
-int chare(char c)
+int chare(char c, int count)
 {
-	int count = 0;
-
 	_putchar(c);
 	count += 1;
 	return (count);

@@ -4,11 +4,12 @@
 /**
  * string - print the string
  * @h: is a letter
+ * @count: is an int
  * Return: 0 (success)
  */
-int string(char *h)
+int string(char *h, int count)
 {
-	int count = 0, i;
+	int i;
 
 	for (i = 0 ; h[i] != '\0' ; i++)
 	{
