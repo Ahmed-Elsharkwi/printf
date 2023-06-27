@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	int count = 0;
 	char p, c;
+	int *y;
 	char *h;
 
 	va_start(args, format);
@@ -36,6 +37,11 @@ int _printf(const char *format, ...)
 				case 's':
 					h = va_arg(args, char*);
 					count = string(h);
+					break;
+				case 'd':
+					y = va_arg(args, int*);
+					_putchar(y[0] + '0');
+					count += 1;
 					break;
 				default:
 					break;
