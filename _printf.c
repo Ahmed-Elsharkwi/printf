@@ -37,6 +37,7 @@ int _printf(const char *format, ...)
 					h = va_arg(args, char*);
 					count = string(h, count);
 					break;
+				case 'i':
 				case 'd':
 					y = va_arg(args, int);
 					count = intg(y, count);
